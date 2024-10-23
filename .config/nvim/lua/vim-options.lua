@@ -1,11 +1,6 @@
 -- Some of the keybinds here are borrowed from: https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua
 -- TODO: Add vim.highlight.on_yank() from kickstart
 
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=4")
-vim.cmd("set softtabstop=4")
-vim.cmd("set shiftwidth=4")
-
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true
@@ -29,7 +24,12 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 8
 vim.opt.wrap = false
 vim.opt.swapfile = false
+vim.opt.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.smartindent = true
 
+-- Enter normal mode with jj
 vim.keymap.set("i", "jj", "<Esc>")
 
 -- Clear highlights on search when pressing leader in normal mode
