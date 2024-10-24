@@ -6,7 +6,7 @@ return {
         "lewis6991/gitsigns.nvim",
         config = function()
             require("gitsigns").setup()
-            local gitsigns = ("gitsigns")
+            -- local gitsigns = ("gitsigns")
             -- Possible new keymaps
             -- vim.keymap.set("n", "<leader>hs", gitsigns.stage_hunk, { desc = "git [s]tage hunk" })
             -- vim.keymap.set("n", "<leader>hr", gitsigns.reset_hunk, { desc = "git [r]eset hunk" })
