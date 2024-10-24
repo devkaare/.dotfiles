@@ -20,7 +20,7 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			local lspconfig = require("lspconfig")
-			lspconfig.tsserver.setup({
+			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.lua_ls.setup({
@@ -29,11 +29,10 @@ return {
 			lspconfig.gopls.setup({
 				capabilities = capabilities,
 			})
-			-- lspconfig.html.setup({
-			--     capabilities = capabilities,
-			-- })
+
 			local builtin = require("telescope.builtin")
 
+			-- New keymaps
 			vim.keymap.set("n", "gd", builtin.lsp_definitions, { desc = "[G]oto [D]efinition" })
 			vim.keymap.set("n", "gr", builtin.lsp_references, { desc = "[G]oto [R]eferences" })
 			vim.keymap.set("n", "gI", builtin.lsp_implementations, { desc = "[G]oto [I]mplementation" })
@@ -42,7 +41,6 @@ return {
 			vim.keymap.set("n", "<leader>ws", builtin.lsp_dynamic_workspace_symbols, { desc = "[W]orkspace [S]ymbols" })
 			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "[R]e[n]ame" })
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "[C]ode [A]ction" })
-			-- New keymaps
 
 			-- Old keymaps
 			-- vim.keymap.set("n", "gD", vim.lsp.buf.definition, {})
