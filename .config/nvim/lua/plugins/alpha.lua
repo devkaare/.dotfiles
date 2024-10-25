@@ -1,5 +1,6 @@
 return {
 	"goolord/alpha-nvim",
+	lazy = false,
 	dependencies = {
 		"echasnovski/mini.icons",
 		-- "nvim-tree/nvim-web-devicons",
@@ -16,12 +17,15 @@ return {
 			"  じしf_,)ノ",
 		}
 
+        -- TODO: Add colors to the text buttons below. E.g. Green = New file, Red = Quit NVIM, Yellow = Search
+		-- Colorful icons 📁 (U+1F4C1) ❌ (U+274C) 🔎 (U+1F50E)
+        -- Basic icons  🗙 ⌕
 		dashboard.section.buttons.val = {
-			dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
-			dashboard.button("q", "󰅚  Quit NVIM", ":qa<CR>"),
+			dashboard.button("e", " New file", ":ene <BAR> startinsert <CR>"),
+			dashboard.button("q", "🗙 Quit NVIM", ":qa<CR>"),
 
 			-- dashboard.button("icon", "event", ":echo 'command to execute event' <CR>")
-			-- dashboard.button("SPC s f", "🔎 Find file", "<leader>sf")
+			dashboard.button("SPC s f", "⌕ Find file", "<leader>sf"),
 		}
 
 		alpha.setup(dashboard.opts)

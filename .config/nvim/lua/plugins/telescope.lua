@@ -1,7 +1,7 @@
 return {
 	{
 		"nvim-telescope/telescope-ui-select.nvim",
-		lazy = false,
+        lazy = false,
 	},
 	{
 		"nvim-telescope/telescope.nvim",
@@ -9,8 +9,6 @@ return {
 		tag = "0.1.5",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
-			local builtin = require("telescope.builtin")
-
 			require("telescope").setup({
 				extensions = {
 					["ui-select"] = {
@@ -18,6 +16,7 @@ return {
 					},
 				},
 			})
+			local builtin = require("telescope.builtin")
 
 			vim.keymap.set("n", "<leader>sb", function() -- The wrapper function is required so builtin.buffers() can take params
 				builtin.buffers({
